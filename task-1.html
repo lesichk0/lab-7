@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 1.1</title>
+    <style>
+        #first {
+            cursor: pointer;
+        }
+        #second {
+            cursor: pointer;
+        }
+        #third {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function changeColors(elementId) {
+            var element = document.getElementById(elementId);
+            var currentColor = window.getComputedStyle(element).color;
+            var currentBackground = window.getComputedStyle(element).backgroundColor;
+            
+            if (elementId === 'first' || elementId === 'third') {
+                element.style.color = currentColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
+                element.style.backgroundColor = currentBackground === 'rgb(255, 255, 0)' ? 'blue' : 'yellow';
+            } else if (elementId === 'second') {
+                element.style.color = currentColor === 'rgb(255, 0, 0)' ? 'white' : 'red';
+                element.style.backgroundColor = currentBackground === 'rgb(255, 255, 255)' ? 'green' : 'white';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 id="first" onclick="changeColors('first')">Доступ до властивостей і методів</h2>
+    <p id="second" onclick="changeColors('second')">Колекція all</p>
+    <div id="third" onclick="changeColors('third')">Метод getElementById()</div>
+</body>
+</html>
